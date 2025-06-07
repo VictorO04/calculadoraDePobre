@@ -2,7 +2,7 @@
 using namespace std;
 
 
-void conta(int operacao, float num1, float num2) {
+void conta(int operacao, float num1, float num2, bool operacaoValida) {
     if (operacao == 1)
     {
         cout << num1 << " + " << num2 << " = " << num1 + num2 << endl;
@@ -46,6 +46,6 @@ int main() {
     cin >> num1;
     cout << "Digite o segundo numero: ";
     cin >> num2;
-    
-    conta(operacao, num1, num2);
+
+    conta(operacao, num1, num2, operacaoValida);
 }
