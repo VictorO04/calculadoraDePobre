@@ -2,7 +2,7 @@
 using namespace std;
 
 
-void conta(int operacao, float num1, float num2, bool operacaoValida) {
+void conta(int operacao, float num1, float num2) {
     if (operacao == 1)
     {
         cout << num1 << " + " << num2 << " = " << num1 + num2 << endl;
@@ -19,11 +19,6 @@ void conta(int operacao, float num1, float num2, bool operacaoValida) {
     {
         cout << num1 << " / " << num2 << " = " << num1 / num2 << endl;
     }
-    else
-    {
-        cout << "erro";
-    }
-    
 }
 
 int main() {
@@ -42,10 +37,33 @@ int main() {
     cout << "Digite o numero da operacao matematica que deseja realizar: ";
     cin >> operacao;
 
+    if (operacao > 4 || operacao < 1)
+    {
+        operacaoValida = false;
+        while (operacaoValida == false)
+        {
+            cout << "Operacao invalida! Faça uma escolha valida: ";
+            cin >> operacao;
+
+            if (operacao >= 1 || operacao <= 4)
+            {
+                operacaoValida = true;
+            }
+            
+        }
+        
+    }
+    else
+    {
+        operacaoValida = true;
+    }
+
     cout << "Digite o primeiro numero: ";
     cin >> num1;
     cout << "Digite o segundo numero: ";
     cin >> num2;
+    
+    
 
-    conta(operacao, num1, num2, operacaoValida);
+    conta(operacao, num1, num2);
 }
