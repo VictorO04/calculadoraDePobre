@@ -2,89 +2,65 @@
 using namespace std;
 
 
-void conta(int operacao, float num1, float num2) {
-    if (operacao == 1)
-    {
-        cout << endl;
-        cout << num1 << " + " << num2 << " = " << num1 + num2 << endl;
+void calculo(int operacao, double num1, double num2) {
+    if (operacao == 1) {
+        cout << num1 << " + " << num2 << " = " << num1 + num2 << "\n";
     }
-    else if (operacao == 2)
-    {
-        cout << endl;
-        cout << num1 << " - " << num2 << " = " << num1 - num2 << endl;
+    else if (operacao == 2) {
+        cout << num1 << " - " << num2 << " = " << num1 - num2 << "\n";
     }
-    else if (operacao == 3)
-    {
-        cout << endl;
-        cout << num1 << " * " << num2 << " = " << num1 * num2 << endl;
+    else if (operacao == 3) {
+        cout << num1 << " * " << num2 << " = " << num1 * num2 << "\n";
     }
-    else if (operacao == 4)
-    {
-        cout << endl;
-        if (num2 == 0)
-        {
+    else if (operacao == 4) {
+        if (num2 == 0) {
             cout << "Operacao indefinida!";
         }
-        else
-        {
-            cout << num1 << " / " << num2 << " = " << num1 / num2 << endl;
+        else {
+            cout << num1 << " / " << num2 << " = " << num1 / num2 << "\n";
         }
         
     }
-    else
-    {
-        cout << endl;
+    else {
         cout << "Algo deu errado!";
     }
 }
 
 int main() {
     int operacao;
-    float num1;
-    float num2;
+    double num1, num2;
     bool operacaoValida = true;
 
-    cout << "       ----- Seja bem vindo -----" << endl;
-    cout << "" << endl;
-    cout << "         Operacoes matematicas" << endl;
-    cout << "________________________________________ " << endl;
-    cout << "| 1 - Adicao             2 - subtracao |" << endl;
-    cout << "| 3 - Multiplicacao      4 - Divisao   |" << endl;
-    cout << "" << endl;
-    cout << "Digite o numero da operacao matematica que deseja realizar: ";
-    cin >> operacao;
+    cout << "       ----- Seja bem vindo -----\n";
+    cout << "\n";
+    cout << "         Operacoes matematicas\n";
+    cout << "________________________________________\n";
+    cout << "| 1 - Adicao             2 - subtracao |\n";
+    cout << "| 3 - Multiplicacao      4 - Divisao   |\n";
+    cout << "\n";
+    
+    while (true) {
+        cout << "Digite o numero da operacao matematica que deseja realizar: ";
+        cin >> operacao;
 
-    if (operacao > 4 || operacao < 1)
-    {
-        operacaoValida = false;
-        while (operacaoValida == false)
-        {
-            cout << "Operacao invalida! Faca uma escolha valida: ";
-            cin >> operacao;
-
-            if (operacao >= 1 && operacao <= 4)
-            {
-                operacaoValida = true;
-            }
-            
+        if (operacao >= 0 && operacao <= 4) {
+            break;
+        }
+        else {
+            cout << "Operacao invalida! Faca uma escolha valida\n";
         }
         
-    }
-    else
-    {
-        operacaoValida = true;
     }
 
     cout << "Digite o primeiro numero: ";
     cin >> num1;
     cout << "Digite o segundo numero: ";
     cin >> num2;
-    
-    
+    cout << "\n";
 
-    conta(operacao, num1, num2);
+    calculo(operacao, num1, num2);
 
-    cout << endl;
+    cout << "\n";
     cout << "Obrigado por usar a calculadora :)";
 
 }
