@@ -29,7 +29,6 @@ void calculo(int operacao, double num1, double num2) {
 int main() {
     int operacao;
     double num1, num2;
-    bool operacaoValida = true;
 
     cout << "       ----- Seja bem vindo -----\n";
     cout << "\n";
