@@ -63,4 +63,5 @@ int main() {
     cout << "\n";
     cout << "Obrigado por usar a calculadora :)";
 
+    return 0;
 }
